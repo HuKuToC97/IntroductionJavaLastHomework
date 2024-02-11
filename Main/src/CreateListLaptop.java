@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Random;
 
 public class CreateListLaptop {
-    public static List<Laptop> Create(int count) {
+    public static List<Laptop> create(int count) {
         List<Laptop> laptops = new ArrayList<>();
         Random random = new Random();
 
