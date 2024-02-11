@@ -11,16 +11,19 @@ public class Filter {
         Map<Integer, String> newFilter = new HashMap<>();
         boolean continueWhile = true;
         Integer countWhile = 0;
-
+        int choice = 0;
         while (continueWhile) {
             App.clearConsole();
             App.ShowAllListForModBugFix(laptops);
+
             System.out.println("НАСТРОЙКА ФИЛЬТРА ПОИСКА НОУТБУКА:");
+
             if (countWhile != 0) {
                 printFilter(newFilter);
             }
+
             printMenu();
-            int choice = scanner.nextInt();
+            choice = scanner.nextInt();
             scanner.nextLine();
 
             switch (choice) {
@@ -78,7 +81,6 @@ public class Filter {
         System.out.println("7 - Создать фильтр");
         System.out.print("Ваша цифра: ");
     }
-    
 
     public static void printFilter(Map<Integer, String> filter) {
         System.out.println("Ваш текущий фильтр выглядит так: ");
@@ -92,10 +94,12 @@ public class Filter {
                     System.out.println(String.format("Выбранная модель: %s", entry.getValue()));
                     break;
                 case 3:
-                    System.out.println(String.format("Выбранный МИНИМАЛЬНЫЙ объем оперативной памяти (ОЗУ): %sGB", entry.getValue()));
+                    System.out.println(String.format("Выбранный МИНИМАЛЬНЫЙ объем оперативной памяти (ОЗУ): %sGB",
+                            entry.getValue()));
                     break;
                 case 4:
-                    System.out.println(String.format("Выбранный МИНИМАЛЬНЫЙ объем жесткого диска: %sGB", entry.getValue()));
+                    System.out.println(
+                            String.format("Выбранный МИНИМАЛЬНЫЙ объем жесткого диска: %sGB", entry.getValue()));
                     break;
                 case 5:
                     System.out.println(String.format("Выбранная операционная система: %s", entry.getValue()));
@@ -111,7 +115,6 @@ public class Filter {
         }
         System.out.println("---------------------------------");
     }
-
 
     public static List<Laptop> startFiltering(List<Laptop> laptops, Map<Integer, String> filter) {
         List<Laptop> resultList = new ArrayList<>();

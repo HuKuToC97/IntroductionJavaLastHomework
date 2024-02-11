@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -80,7 +79,7 @@ public class App {
 
         System.out.println("Ноутбуки соответствующие вашему фильтру:");
         for (Laptop laptop : laptops) {
-            System.out.println(laptop);
+            System.out.println("    " + laptop);
         }
         System.out.println("----------------------------------------------------------------");
 
